@@ -122,7 +122,7 @@
 
 /* Стили для неактивных кнопок при наведении */
 .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  border: 1px solid rgba(255, 0, 112, 0.4); /* Рамка с прозрачностью 40% */
+  border: 1px solid rgba(255, 0, 112, 0.4); 
 }
 
 /* Стили для неактивных кнопок при фокусе */
