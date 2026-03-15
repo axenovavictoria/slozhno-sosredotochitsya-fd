@@ -4,7 +4,6 @@
   background-color: var(--page-bg-color, #000028);
   min-height: 100vh;
   font-family: 'IBM Plex Mono', monospace;
-
 }
 
 /* Header */
@@ -76,7 +75,7 @@
 .header__theme-menu {
   justify-self: end;
   align-self: start;
-  margin-top: 75px;
+  margin-top: 65px;
 }
 
 .header__theme-menu-list {
