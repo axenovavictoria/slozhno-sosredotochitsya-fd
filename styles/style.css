@@ -1,5 +1,322 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
+/* Основные стили проекта */
 
 .page {
-  /* сохраните в разметке и стилях класс page у тега body. Он удобен, чтобы составлять селекторы для разных цветовых тем. */
+  background-color: var(--page-bg-color, #000028);
+  min-height: 100vh;
+  font-family: 'IBM Plex Mono', monospace;
+
+}
+
+/* Header */
+.header {
+  position: relative;
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  align-items: center;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+  background-image: var(--page-bg-image, url('../images/cover-image-dark.png'));
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* Декоративные уголки */
+.decorated-zone::before,
+.decorated-zone::after {
+  content: '';
+  position: absolute;
+  width: 25px;
+  height: 25px;
+  border: 1px solid var(--decor-color, #ff0070);
+}
+
+.decorated-zone::before {
+  top: 10px;
+  right: 10px;
+  border-left: none;
+  border-bottom: none;
+}
+
+.decorated-zone::after {
+  bottom: 10px;
+  left: 10px;
+  border-right: none;
+  border-top: none;
+}
+
+/* REC индикатор */
+.decorated-zone__rec-container {
+  position: absolute;
+  top: 10px;
+  right: 19px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.decorated-zone__rec {
+  color: var(--accent-color, #ff0070);
+  font-size: 18px;
+  line-height: 25px;
+  text-transform: uppercase;
+}
+
+.decorated-zone__rec-container::after {
+  content: '';
+  width: 9px;
+  height: 9px;
+  border-radius: 50%;
+  background-color: var(--accent-color, #ff0070);
+  box-shadow: 0 0 4px 2px var(--accent-color, #ff0070);
+}
+
+/* Меню переключения тем */
+.header__theme-menu {
+  justify-self: end;
+  align-self: start;
+  margin-top: 75px;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  align-items: flex-end;
+}
+
+.header__theme-menu-item {
+  list-style: none;
+}
+
+.header__theme-menu-button {
+  border: none;
+  background: transparent;
+  width: 70px;         /* Фиксированная ширина 70px */
+  height: 26px;        /* Фиксированная высота 26px */
+  padding: 0 13px;
+  color: var(--menu-color, #ff0070);
+  font-size: 18px;
+  line-height: 18px;
+  text-transform: lowercase;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  font-family: 'IBM Plex Mono', monospace;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+}
+
+/* Стили для выбранной (активной) кнопки */
+.header__theme-menu-button_active {
+  border: 1px solid var(--menu-color, #ff0070);
+  pointer-events: none; /* Отключаем события мыши для активной кнопки */
+}
+
+/* Стили для отключенной кнопки */
+.header__theme-menu-button:disabled {
+  opacity: 1; /* Убираем прозрачность, так как у нас есть отдельный стиль для active */
+}
+
+/* Стили для неактивных кнопок при наведении */
+.header__theme-menu-button:not(.header__theme-menu-button_active):hover {
+  border: 1px solid rgba(255, 0, 112, 0.4); /* Рамка с прозрачностью 40% */
+}
+
+/* Стили для неактивных кнопок при фокусе */
+.header__theme-menu-button:not(.header__theme-menu-button_active):focus-visible {
+  outline: none;
+  border: 1px solid var(--menu-color, #ff0070); /* Рамка 1px сплошная */
+  outline-offset: 0;
+}
+
+/* Для совместимости с браузерами, не поддерживающими :focus-visible */
+.header__theme-menu-button:not(.header__theme-menu-button_active):focus {
+  outline: none;
+  border: 1px solid var(--menu-color, #ff0070);
+}
+
+/* Заголовок no focus */
+.header__title {
+  color: var(--title-color, #db00ff);
+  font-size: 116px;
+  font-weight: 700;
+  line-height: 0.83;
+  text-shadow: 4px 4px 0 var(--accent-color, #ff0070);
+}
+
+/* Описание в хедере */
+.header__description {
+  justify-self: end;
+  max-width: 355px;
+}
+
+/* ЕДИНЫЙ КЛАСС для всех розовых подложек */
+.title-decor {
+  background-color: var(--accent-color, #ff0070);
+  color: var(--bg-color, #000028);
+  width: 100%; /* Растягивается на всю ширину родителя */
+  display: inline-block; /* Чтобы подложка была по ширине контента */
+}
+
+/* Класс для заголовков с жирным шрифтом */
+.card-title {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+}
+
+/* Класс для подзаголовков с обычным шрифтом */
+.card-subtitle {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+}
+
+/* Основной контент */
+.main {
+  padding: 40px 10px;
+}
+
+/* Секции */
+.section {
+  margin-bottom: 50px;
+}
+
+.section:last-child {
+  margin-bottom: 0;
+}
+
+.section__title {
+  color: var(--section-title-color, #ff0070);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 700;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  margin-bottom: 20px;
+}
+
+/* Обновить отступы для карточек в этой секции */
+.section--how .section__content {
+  margin-top: 20px;
+}
+
+.section__content {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* Карточки */
+.card {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.card__text {
+  color: var(--text-color-card, #f1f1f1);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+}
+
+/* Акцентные слова (ссылки) - вариант с text-shadow */
+.card__text-accent {
+  display: inline-block;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 23.4px;
+  letter-spacing: 0%;
+  color: #F1B2CE; /* Основной цвет */
+  text-decoration: none;
+  cursor: pointer;
+  text-shadow: 
+    2px 2px 0 #FF0070; /* Смещение 2px вправо и 2px вниз */
+}
+
+/* Стили для наведения */
+.card__text-accent:hover {
+  text-decoration: underline;
+  text-decoration-style: solid;
+  text-decoration-color: #F1B2CE;
+  text-shadow: 
+    2px 2px 0 #FF0070; /* Сохраняем тень при наведении */
+}
+
+/* Стили для фокуса */
+.card__text-accent:focus-visible {
+  outline: none;
+  border: 1px solid #F1B2CE;
+  text-shadow: 
+    2px 2px 0 #FF0070;
+}
+
+/* Для совместимости с браузерами, не поддерживающими :focus-visible */
+.card__text-accent:focus {
+  outline: none;
+  border: 1px solid #F1B2CE;
+  text-shadow: 
+    2px 2px 0 #FF0070;
+}
+
+/* Ссылки */
+.card__text a {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+}
+
+.card__text a:hover {
+  border-bottom: 1px solid currentColor;
+}
+
+.card__text a:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+/* Галерея */
+.section--gallery {
+  margin-bottom: 0;
+}
+
+.gallery {
+  display: grid;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.gallery__image {
+  width: 100%;
+  height: auto;
+  object-fit: cover;
+  display: block;
+}
+
+/* Футер */
+.footer {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  min-height: 668px;
+  padding: 10px;
+}
+
+.footer__title {
+  color: var(--title-color, #db00ff);
+  font-size: 116px;
+  font-weight: 700;
+  line-height: 0.83;
+  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
 }

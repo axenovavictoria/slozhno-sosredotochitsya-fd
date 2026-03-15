@@ -2,3 +2,24 @@
   Переменные для вашего проекта
   и их переопределение под различные устройства
 */
+
+:root {
+  /* Фоновое изображение для темной темы (основной) */
+  --page-bg-image: url('../images/cover-image-dark.png');
+  --page-bg-color: #000028;
+  
+  /* heading */
+  --accent-color: #ff0070;
+  --decor-color: #ff0070;
+  --title-color: #db00ff;
+  --menu-color: #ff0070;
+  --bg-color: #000028;
+
+  /* основная */
+  --text-color: #f1f1f1;
+  --section-title-color: #ff0070;
+  --text-color-card: rgba(241, 178, 206, 1);
+
+    /* шрифт */
+    --main-font: 'IBM Plex Mono', monospace;
+}
