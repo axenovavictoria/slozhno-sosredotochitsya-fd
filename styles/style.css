@@ -246,9 +246,8 @@
 
 /* Стили слов-ссылок hover - только underline */
 .card__text-accent:hover {
-  text-decoration: underline;
-  text-decoration-style: solid;
-  text-decoration-color: var(--text-color-card, #F1B2CE);
+  border-bottom: 1px solid var(--text-color-card, #F1B2CE);
+  text-decoration: none;
 }
 
 /* Стили слов-ссылок focus-visible */
