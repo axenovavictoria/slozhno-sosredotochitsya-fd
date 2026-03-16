@@ -570,7 +570,8 @@
     font-size: 157px;
     width: 759px;
     text-align: left;
-    margin: -20px;
+    margin: 0;
+    margin-left: -20px;
     margin-top: -20px;
   }
 
