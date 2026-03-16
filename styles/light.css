@@ -29,3 +29,25 @@
 .theme-light .decorated-zone__rec-container::after {
   display: none;
 }
+
+/* ===== АВТОМАТИЧЕСКАЯ СВЕТЛАЯ ТЕМА ===== */
+@media (prefers-color-scheme: light) {
+  :root {
+    --page-bg-image: url('../images/cover-image-light.png');
+    --page-bg-color: #FFF1F7;
+
+    --accent-color: #ff8dcb;
+    --decor-color: #353430;
+    --title-color: #ffc2e6;
+    --menu-color: #353430;
+    --bg-color: #FFF1F7;
+
+    --text-color: #353430;
+    --section-title-color: #353430;
+    --text-color-card: rgba(53, 52, 48, 1);
+  }
+
+  .decorated-zone__rec {
+    display: none;
+  }
+}
