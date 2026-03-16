@@ -25,3 +25,7 @@
 .theme-light .decorated-zone__rec {
   display: none;
 }
+
+.theme-light .decorated-zone__rec-container::after {
+  display: none;
+}
