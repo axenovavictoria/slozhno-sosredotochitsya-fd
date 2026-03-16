@@ -556,7 +556,7 @@
   .header__theme-menu {
     justify-self: center;
     align-self: start;
-    margin-top: 20px;
+    margin-top: 0;
   }
 
   .header__theme-menu-list {
@@ -576,6 +576,11 @@
     max-width: 491px;
     justify-self: end;
     margin-right: 0;
+  }
+
+  /* Скрываем br */
+  .header__description br {
+    display: none;
   }
 
   /* Main */
