@@ -124,7 +124,7 @@
 
 /* Кнопка hover */
 .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  border: 1px solid var(--menu-color, #ff0070);
+  border: 1px solid color-mix(in srgb, var(--menu-color, #ff0070) 40%, transparent);
 }
 
 /* Кнопка focus-visible */
