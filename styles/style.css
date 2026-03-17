@@ -124,7 +124,7 @@
 
 /* Кнопка hover */
 .header__theme-menu-button:not(.header__theme-menu-button_active):hover {
-  border: 1px solid rgba(255, 0, 112, 0.4); 
+  border: 1px solid var(--menu-color, #ff0070);
 }
 
 /* Кнопка focus-visible */
@@ -296,7 +296,7 @@
   font-size: 116px;
   font-weight: 700;
   line-height: 0.83;
-  text-shadow: 2px 2px 0 var(--accent-color, #ff0070);
+  text-shadow: 2px 2px 0 var(--accent-color-footer, #ff0070);
 }
 
 /* ========== 768 х 1024 ========== */
@@ -331,9 +331,10 @@
   }
 
   .header__title {
-    font-size: 120px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     width: 576.84px;
     margin: 0;
+    margin-left: -20px;
   }
 
   .header__description {
@@ -521,7 +522,7 @@
   }
 
   .header__title {
-    font-size: 157px;
+    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     width: 759px;
     text-align: left;
     margin: 0;
@@ -644,5 +645,10 @@
     grid-column: span 2;
     grid-row: span 2;
     aspect-ratio: 649 / 433;
+  }
+
+  /* footer */
+  .footer__title {
+    font-size: 157px;
   }
 }

@@ -7,14 +7,14 @@
 :root.theme-light {
   /* фон для светлой темы */
   --page-bg-image: url('../images/cover-image-light.png');
-  --page-bg-color: #FFF1F0;
+  --page-bg-color: #FFF1F7; 
 
   /* heading */
-  --accent-color: #ff8dcb;
+  --accent-color: #FF8DCB;
   --decor-color: #353430;
   --title-color: #ffc2e6;
   --menu-color: #353430;
-  --bg-color: #FFF1F0;
+  --bg-color: #353430; 
 
   /* основная */
   --text-color: #353430;
@@ -36,18 +36,21 @@
     --page-bg-image: url('../images/cover-image-light.png');
     --page-bg-color: #FFF1F7;
 
-    --accent-color: #ff8dcb;
+    --accent-color: #FF0070;
     --decor-color: #353430;
-    --title-color: #ffc2e6;
+    --title-color: #FFC2E6;
     --menu-color: #353430;
-    --bg-color: #FFF1F7;
+    --bg-color: #353430;
 
     --text-color: #353430;
     --section-title-color: #353430;
     --text-color-card: rgba(53, 52, 48, 1);
+
+    --accent-color-footer: #FF0070;
   }
 
-  .decorated-zone__rec {
+  /* Скрываем весь контейнер REC, а не только текст */
+  .decorated-zone__rec-container {
     display: none;
   }
 }
